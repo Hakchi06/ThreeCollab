@@ -1,5 +1,5 @@
 // Archivo controls.js - Controles e interacciones
-import { OrbitControls } from 'https://cdn.jsdelivr.net/npm/three@0.164.0/examples/jsm/controls/OrbitControls.js';
+import { OrbitControls } from 'OrbitControls';
 import { camera, renderer } from './scene.js';
 
 let controls;

@@ -1,6 +1,6 @@
 // Archivo scene.js - Configuración de la escena Three.js
 
-import * as THREE from 'https://cdn.jsdelivr.net/npm/three@0.164.0/build/three.module.js';
+import * as THREE from 'three';
 
 // Variables para la escena, cámara y renderizador
 let scene, camera, renderer;
