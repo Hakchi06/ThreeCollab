@@ -1,12 +1,14 @@
 // Archivo controls.js - Controles e interacciones
 
+import { OrbitControls } from 'https://cdn.jsdelivr.net/npm/three@0.164.0/examples/jsm/controls/OrbitControls.js';
+import { camera, renderer } from './scene.js';
+
 let controls;
 
 // Función para inicializar los controles
 function initControls() {
-    // Crear controles de órbita
-    controls = new THREE.OrbitControls(camera, renderer.domElement);
-    controls.enableDamping = true; // Añade inercia a los controles
+    controls = new OrbitControls(camera, renderer.domElement);
+    controls.enableDamping = true;
     controls.dampingFactor = 0.05;
     controls.screenSpacePanning = false;
     controls.minDistance = 3;

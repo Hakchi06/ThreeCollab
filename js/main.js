@@ -1,5 +1,6 @@
 // Archivo main.js - Código principal de la aplicación
 
+import { scene, camera, renderer } from './scene.js';
 // Variables para el bucle de animación
 let animationId;
 
