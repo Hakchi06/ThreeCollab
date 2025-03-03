@@ -24,3 +24,5 @@ function updateControls() {
         controls.update();
     }
 }
+
+export { initControls, updateControls };
