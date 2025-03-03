@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Proyecto Three.js</title>
+    <link rel="stylesheet" href="styles/main.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Mi Proyecto Three.js</h1>
+        <div id="info">
+            <p>Haz clic y arrastra para mover la cámara</p>
+            <p>Usa la rueda del ratón para hacer zoom</p>
+        </div>
+        <div id="canvas-container"></div>
+    </div>
+
+    <!-- Carga Three.js desde CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r151/three.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r151/controls/OrbitControls.min.js"></script>
+    
+    <!-- Carga tus scripts -->
+    <script src="js/scene.js"></script>
+    <script src="js/controls.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
