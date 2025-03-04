@@ -1,14 +1,25 @@
-// Archivo main.js - Código principal de la aplicación
+// Archivo principal de la aplicación
 
 import { initScene, scene, camera, renderer } from './scene.js';
 import { initControls, updateControls } from './controls.js';
-import {generateTerrain } from './terrain.js';
+import {generateTerrain, updateTerrainHeight } from './terrain.js';
+import { createSlider } from './components/slider.js';
 
 // Variables para el bucle de animación
-let animationId;
+let animationId, heightMultiplier = 10;
 
 // Función para iniciar la aplicación
 function init() {
+
+    // Crear el slider para la magnitud de la altura
+    const heightSlider = createSlider('heightMultiplier', 0, 10, 0.1, heightMultiplier, (value) => {
+        heightMultiplier = value;
+        updateTerrainHeight(heightMultiplier);
+    });
+
+    // Agregar el slider a la interfaz de usuario
+    document.body.appendChild(heightSlider);
+
     // Inicializar la escena
     initScene();
     

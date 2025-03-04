@@ -4,7 +4,7 @@ body {
     font-family: Arial, Helvetica, sans-serif;
     background-color: #f0f0f0;
     color: #333;
-    overflow: hidden;
+    overflow: auto;
 }
 
 .container {
@@ -36,6 +36,14 @@ h1 {
     display: block;
 }
 
-canvas {
-    display: block;
+
+
+.slider-container {
+    position: absolute; /* O 'absolute' si prefieres que esté relacionado con el canvas */
+    top: 20px;
+    right: 20px;
+    background: rgba(255, 255, 255, 0.8);
+    padding: 10px;
+    border-radius: 8px;
+    z-index: 10; /* Asegúrate que esté encima del canvas */
 }
