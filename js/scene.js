@@ -9,12 +9,12 @@ let scene, camera, renderer;
 function initScene() {
     // Crear la escena
     scene = new THREE.Scene();
-    scene.background = new THREE.Color(0xf0f0f0);
+    scene.background = new THREE.Color(0x87CEEB);
 
     // Crear la cámara
     const aspectRatio = window.innerWidth / window.innerHeight;
     camera = new THREE.PerspectiveCamera(75, aspectRatio, 0.1, 1000);
-    camera.position.z = 5;
+    camera.position.set(0, 50, 100);
 
     // Crear el renderizador
     renderer = new THREE.WebGLRenderer({ antialias: true });
@@ -27,9 +27,6 @@ function initScene() {
 
     // Agregar luces
     addLights();
-    
-    // Agregar objetos a la escena
-    addObjects();
 
     // Manejar el redimensionamiento de la ventana
     window.addEventListener('resize', onWindowResize, false);
@@ -45,37 +42,6 @@ function addLights() {
     const directionalLight = new THREE.DirectionalLight(0xffffff, 0.8);
     directionalLight.position.set(1, 1, 1);
     scene.add(directionalLight);
-}
-
-// Función para agregar objetos a la escena
-function addObjects() {
-    // Crear geometrías básicas
-    const geometry1 = new THREE.BoxGeometry(1, 1, 1);
-    const geometry2 = new THREE.SphereGeometry(0.8, 32, 32);
-    const geometry3 = new THREE.TorusKnotGeometry(0.5, 0.2, 100, 16);
-
-    // Crear materiales
-    const material1 = new THREE.MeshStandardMaterial({ color: 0x3498db });
-    const material2 = new THREE.MeshStandardMaterial({ color: 0xe74c3c });
-    const material3 = new THREE.MeshStandardMaterial({ color: 0x2ecc71 });
-
-    // Crear mallas
-    const cube = new THREE.Mesh(geometry1, material1);
-    cube.position.x = -2;
-    scene.add(cube);
-
-    const sphere = new THREE.Mesh(geometry2, material2);
-    sphere.position.x = 0;
-    scene.add(sphere);
-
-    const torusKnot = new THREE.Mesh(geometry3, material3);
-    torusKnot.position.x = 2;
-    scene.add(torusKnot);
-
-    // Agregar el cubo, la esfera y el torusKnot al objeto window para poder animarlos
-    window.cube = cube;
-    window.sphere = sphere;
-    window.torusKnot = torusKnot;
 }
 
 // Función para manejar el redimensionamiento de la ventana

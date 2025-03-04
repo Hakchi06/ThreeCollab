@@ -2,6 +2,8 @@
 
 import { initScene, scene, camera, renderer } from './scene.js';
 import { initControls, updateControls } from './controls.js';
+import {generateTerrain } from './terrain.js';
+
 // Variables para el bucle de animación
 let animationId;
 
@@ -12,6 +14,9 @@ function init() {
     
     // Inicializar los controles
     initControls();
+
+    // Generar el terreno
+    generateTerrain();
     
     // Comenzar el bucle de animación
     animate();
@@ -19,24 +24,6 @@ function init() {
 
 // Función para animar la escena
 function animate() {
-    animationId = requestAnimationFrame(animate);
-    
-    // Rotar los objetos
-    if (window.cube) {
-        window.cube.rotation.x += 0.01;
-        window.cube.rotation.y += 0.01;
-    }
-    
-    if (window.sphere) {
-        window.sphere.rotation.y += 0.01;
-    }
-    
-    if (window.torusKnot) {
-        window.torusKnot.rotation.x += 0.01;
-        window.torusKnot.rotation.y += 0.01;
-    }
-    
-    // Actualizar los controles
     updateControls();
     
     // Renderizar la escena
