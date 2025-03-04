@@ -24,6 +24,7 @@ function init() {
 
 // Función para animar la escena
 function animate() {
+    animationId = requestAnimationFrame(animate);
     updateControls();
     
     // Renderizar la escena

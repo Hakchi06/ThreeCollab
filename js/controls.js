@@ -11,7 +11,7 @@ function initControls() {
     controls.dampingFactor = 0.05;
     controls.screenSpacePanning = false;
     controls.minDistance = 3;
-    controls.maxDistance = 10;
+    controls.maxDistance = 200;
     controls.maxPolarAngle = Math.PI / 2;
 }
 
