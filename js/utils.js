@@ -1,4 +1,4 @@
-import SimplexNoise from 'simplex-noise';
+import * as SimplexNoise from 'https://cdn.jsdelivr.net/npm/simplex-noise@2.4.0/simplex-noise.min.js';
 
 const simplex = new SimplexNoise();
 
